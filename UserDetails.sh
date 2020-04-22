@@ -25,3 +25,17 @@ else
         echo "Invalid last name"
 fi
 
+
+#!/bin/bash
+
+read -p "Enter the phone number: " ph
+
+phPatt="^[+][0-9]{2}[ -]+[0-9]{10}$"
+
+if [[ $ph =~ $phPatt ]]
+then
+        echo "Valid Phone number"
+else
+        echo "Invalid Phone number"
+fi
+
