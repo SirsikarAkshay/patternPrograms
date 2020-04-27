@@ -12,3 +12,16 @@ then
 else
         echo "Invalid first name"
 fi
+
+#LastName
+read -p "Enter the Last Name" lname
+
+lnamePat="^[A-Z]+[a-zA-Z]{7,}$"
+
+if [[ $lname =~ $lnamePat ]]
+then
+        echo "Valid last name"
+else
+        echo "Invalid last name"
+fi
+
