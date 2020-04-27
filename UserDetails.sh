@@ -31,7 +31,7 @@ fi
 
 read -p "Enter the phone number: " ph
 
-phPatt="^[+][0-9]{2}[ -]+[0-9]{10}$"
+phPatt="^[+][0-9]{2}[ -]?[0-9]{10}$"
 
 if [[ $ph =~ $phPatt ]]
 then
@@ -51,4 +51,17 @@ then
 else
         echo "invalid email"
 fi
+
+#Password Validation
+read -p "Enter the password: " pass
+
+punct="[@_-+#]{1}"
+
+if [[ ${#pass} -ge 8 ]] &&  [[ $pass =~ [[:upper:]] ]] && [[ $pass =~ [[:lower:]] ]] && [[ $pass =~ [[:digit:]] ]] && [[ $pass =~ [[:punct:]] ]]
+then
+        echo "Valid password"
+else
+        echo "Invalid password"
+fi
+
 
